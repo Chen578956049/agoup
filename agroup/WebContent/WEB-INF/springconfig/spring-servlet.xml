@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<!-- spring servlet配置 bean标签中取消id属性 用name属性来替代传统的servlet映射名 如果在web.xml配置文件中，DispatcherServlet请求的拦截路径为*.do 
+		那么在bean标签中的name属性值必须填写/*.do -->
+	<!-- <bean name="/indexServlet.do" class="com.mybatis.contoller.IndexServlet" 
+		p:teacherVODao-ref="teacherDao"/> -->
+
+
+	<!-- 配置spring 异常处理 p:exceptionAttribute="ex" 异常解析器 -->
+	<!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" 
+		p:defaultErrorView="/WEB-INF/error/error.jsp" p:exceptionAttribute="ex" p:exceptionMappings-ref="exceptionMapping"/> 
+		<util:properties id="exceptionMapping"> <prop key="com.mybatis.cust.exception.CustException">/WEB-INF/error/error_cust.jsp</prop> 
+		</util:properties> -->
+
+	<context:component-scan base-package="com" />
+
+
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/resource/"
+		mapping="/resource/**" />
+</beans>
