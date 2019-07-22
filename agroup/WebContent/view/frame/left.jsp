@@ -125,6 +125,7 @@ document.write("<div id=tt style=height:"+he+";overflow:hidden>")
 															cellpadding="0" cellspacing="0">
 
 															<tr>
+<<<<<<< HEAD
 															<tr>
 																<td width="16%" height="25">
 																	<div align="center">
@@ -414,6 +415,290 @@ document.write("<div id=tt style=height:"+he+";overflow:hidden>")
 																	</td>
 																</tr>
 															</c:if>
+=======
+																	<tr>
+																		<td width="16%" height="25">
+																			<div align="center">
+																				<img src="<%=basePath%>resource/images/left.gif"
+																					width="10" height="10" />
+																			</div>
+																		</td>
+																		<td width="84%" height="23">
+																			<table width="95%" border="0" cellspacing="0"
+																				cellpadding="0">
+																				<tr>
+																					<td height="20" style="cursor: hand"
+																						onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																						onmouseout="this.style.borderStyle='none'"><span
+																						class="STYLE3"> <a href="<%=basePath%>aaa?add=addcdailylog"
+																						target="mainFrame">添加客户</a> </span></td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+															<tr>
+																<td width="16%" height="25">
+																	<div align="center">
+																		<img src="<%=basePath%>resource/images/left.gif"
+																			width="10" height="10" />
+																	</div>
+																</td>
+																<td width="84%" height="23">
+																	<table width="95%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td height="20" style="cursor: hand"
+																				onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																				onmouseout="this.style.borderStyle='none'"><span
+																				class="STYLE3"><a
+																					href="<%-- <%=basePath%>servlet/CustomerQueryServlet?userId=<%=userInfo.getUserId()%> --%>"
+																					target="mainFrame">客户信息</a> </span></td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<tr>
+																<td height="23">
+																	<div align="center">
+																		<img src="<%=basePath%>resource/images/left.gif"
+																			width="10" height="10" />
+																	</div>
+																</td>
+																<td height="23">
+																	<table width="95%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td height="20" style="cursor: hand"
+																				onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																				onmouseout="this.style.borderStyle='none'"><span
+																				class="STYLE3"> <a
+																					href="<%=basePath%>servlet/CustomerConditionQueryServlet"
+																					target="mainFrame">客户状态</a>
+																			</span></td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<%-- <tr>
+																	<td height="23">
+																		<div align="center">
+																			<img src="<%=basePath%>resource/images/left.gif"
+																				width="10" height="10" />
+																		</div>
+																	</td>
+																	<td height="23">
+																		<table width="95%" border="0" cellspacing="0"
+																			cellpadding="0">
+																			<tr>
+																				<td height="20" style="cursor: hand"
+																					onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																					onmouseout="this.style.borderStyle='none'">
+																					<span class="STYLE3"> <a
+																						href="<%=basePath%>servlet/CustomerSourceQueryServlet" target="mainFrame">客户来源</a>
+																					</span>
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr> --%>
+
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td height="5"><img
+														src="<%=basePath%>resource/images/main_52.gif" width="151"
+														height="5" /></td>
+												</tr>
+											</table>
+										</div>
+									</td>
+								</tr>
+
+							</table>
+						</td>
+					</tr>
+
+
+
+					<!-- 员工信息 -->
+
+					<tr>
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td height="23"
+										background="<%=basePath%>resource/images/main_47.gif"
+										id="imgmenu3" class="menu_title"
+										onmouseover="this.className='menu_title2';"
+										onclick="showsubmenu(3)"
+										onmouseout="this.className='menu_title';" style="cursor: hand">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="18%">&nbsp;</td>
+												<td width="82%" class="STYLE1">员工相关</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td background="<%=basePath%>resource/images/main_51.gif"
+										id="submenu3">
+										<div class="sec_menu">
+											<table width="100%" border="0" cellspacing="0"
+												cellpadding="0">
+												<tr>
+													<td>
+														<table width="90%" border="0" align="center"
+															cellpadding="0" cellspacing="0">
+
+															<!-- 添加员工 -->
+															<tr>
+																<td width="16%" height="25">
+																	<div align="center">
+																		<img src="<%=basePath%>resource/images/left.gif"
+																			width="10" height="10" />
+																	</div>
+																</td>
+																<td width="84%" height="23">
+																	<table width="95%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td height="20" style="cursor: hand"
+																				onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																				onmouseout="this.style.borderStyle='none'"><span
+																				class="STYLE3"><a
+																					href="<%=basePath%>servlet/UserQueryServlet"
+																					target="mainFrame">添加员工</a> </span></td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<!-- 员工信息 -->
+															<tr>
+																<td width="16%" height="25">
+																	<div align="center">
+																		<img src="<%=basePath%>resource/images/left.gif"
+																			width="10" height="10" />
+																	</div>
+																</td>
+																<td width="84%" height="23">
+																	<table width="95%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td height="20" style="cursor: hand"
+																				onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																				onmouseout="this.style.borderStyle='none'"><span
+																				class="STYLE3"><a
+																					href="<%=basePath%>servlet/UserQueryServlet"
+																					target="mainFrame">员工信息</a> </span></td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<!-- 员工职位 -->
+															<tr>
+															<tr>
+																<td width="16%" height="25">
+																	<div align="center">
+																		<img src="<%=basePath%>resource/images/left.gif"
+																			width="10" height="10" />
+																	</div>
+																</td>
+																<td width="84%" height="23">
+																	<table width="95%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td height="20" style="cursor: hand"
+																				onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																				onmouseout="this.style.borderStyle='none'"><span
+																				class="STYLE3"><a
+																					href="<%=basePath%>servlet/UserQueryServlet"
+																					target="mainFrame">员工职位</a> </span></td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<!-- 员工工作日志 -->
+															<tr>
+																	<td width="16%" height="25">
+																		<div align="center">
+																			<img src="<%=basePath%>resource/images/left.gif"
+																				width="10" height="10" />
+																		</div>
+																	</td>
+																	<td width="84%" height="23">
+																		<table width="95%" border="0" cellspacing="0"
+																			cellpadding="0">
+																			<tr>
+																				<td height="20" style="cursor: hand"
+																					onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																					onmouseout="this.style.borderStyle='none'">
+																					<span class="STYLE3">
+																						<c:if test="${sessionScope.list.SPid==1}">
+																					    	<a href="<%=basePath%>queryLog" target="mainFrame">工作日志</a>
+																						</c:if>
+																						<c:if test="${sessionScope.list.SPid==2}">
+																					    	<a href="<%=basePath%>queryLogBySID?sid=${sessionScope.list.SId}" target="mainFrame">工作日志</a>
+																						</c:if>
+																					</span>
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>		
+
+															<!-- 员工合同信息 -->
+															<tr>
+																<td width="16%" height="25">
+																	<div align="center">
+																		<img src="<%=basePath%>resource/images/left.gif"
+																			width="10" height="10" />
+																	</div>
+																</td>
+																<td width="84%" height="23">
+																	<table width="95%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td height="20" style="cursor: hand"
+																				onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																				onmouseout="this.style.borderStyle='none'"><span
+																				class="STYLE3"><a
+																					href="<%=basePath%>StaffIdSelectContract"
+																					target="mainFrame">合同信息</a> </span></td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<!-- 公告	 -->
+																<tr>
+																	<td height="23">
+																		<div align="center">
+																			<img src="<%=basePath%>resource/images/left.gif"
+																				width="10" height="10" />
+																		</div>
+																	</td>
+																	<td height="23">
+																		<table width="95%" border="0" cellspacing="0"
+																			cellpadding="0">
+																			<tr>
+																				<td height="20" style="cursor: hand"
+																					onmouseover="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#7bc4d3'; "
+																					onmouseout="this.style.borderStyle='none'"><span
+																					class="STYLE3"> <a href="<%=basePath%>aaa?add=addcontract"
+																						target="mainFrame">添加合同</a>
+																				</span></td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>
+>>>>>>> refs/remotes/origin/master
 														</table>
 													</td>
 												</tr>

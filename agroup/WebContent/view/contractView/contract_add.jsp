@@ -39,6 +39,7 @@
 						</div>
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
+<<<<<<< HEAD
 						<input type="text" name="CONId"  maxlength="10" style="width: 145px" valid="required"  errmsg="合同名称不能为空!" >
 						&nbsp;
 					</td>
@@ -113,6 +114,82 @@
 					</td>
 					<td colspan="3" bgcolor="#FFFFFF">
 						<input type="text" name="CONPhotograph"  maxlength="20" style="width: 145px">
+=======
+						<input type="text" name="CONId"  maxlength="10" style="width: 145px" valid="required"  check_str="合同名称不能为空!" >
+						&nbsp;
+					</td>
+					
+					
+				
+				<tr>
+					<td bgcolor="#FFFDF0">
+						<div align="center">
+							合同签订时间：
+						</div>
+					</td>
+					<td colspan="3" bgcolor="#FFFFFF">
+						<input type="date" name="CONTime" style="width: 145px"  maxlength="2"  valid="required" value=""  check_str="合同签订时间不能为空!">
+						&nbsp;
+					</td>
+
+					
+				</tr>
+				
+				<tr>
+					<td bgcolor="#FFFDF0" style="height: 21px">
+						<div align="center">
+							总金额：
+						</div>
+					</td>
+					<td colspan="3" bgcolor="#FFFFFF">
+						<input type="text" name="CONMoney"  maxlength="20" style="width: 145px" valid="required"  check_str="总金额不能为空!">
+						&nbsp;
+					</td>
+					
+				</tr>
+				
+				<tr>
+					<td bgcolor="#FFFDF0">
+						<div align="center">
+							客户编号：
+						</div>
+					</td>
+					<td colspan="3" bgcolor="#FFFFFF">
+						<input type="text" name="CONCid"  maxlength="20" style="width: 145px" valid="required"  check_str="客户编号不能为空!">
+						&nbsp;
+					</td>
+					<td bgcolor="#FFFDF0">
+						<div align="center">
+							员工编号：
+						</div>
+					</td>
+					<td colspan="3" bgcolor="#FFFFFF">
+						<input type="text" name="CONSid"  maxlength="20" style="width: 145px" valid="required"  check_str="员工编号不能为空!">
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#FFFDF0">
+						<div align="center">
+							合同状态：
+						</div>
+					</td>
+					<td colspan="3" bgcolor="#FFFFFF">
+						<!-- <input type="text" name="CONConstate"  maxlength="20" style="width: 145px"> -->
+						<select name="CONConstate" style="width: 145px" >
+							<option>签订</option>
+							<option>未签订</option>
+						</select>
+						&nbsp;
+					</td>
+					<td bgcolor="#FFFDF0">
+						<div align="center">
+							合同内容：
+						</div>
+					</td>
+					<td colspan="3" bgcolor="#FFFFFF">
+						<input type="text" name="CONPhotograph"  maxlength="20" style="width: 145px" check_str="合同内容不能为空!">
+>>>>>>> refs/remotes/origin/master
 						&nbsp;
 					</td>
 				</tr>

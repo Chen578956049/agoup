@@ -22,6 +22,10 @@ public class StaffServlet {
 	@RequestMapping("/login")
 	public ModelAndView login(String usename,String psw) {
 		ModelAndView m = new ModelAndView();
+<<<<<<< HEAD
+=======
+		
+>>>>>>> refs/remotes/origin/master
 		StaffVo s = new StaffVo();
 		s.setSUsername(usename);
 		s.setSPassworld(psw);

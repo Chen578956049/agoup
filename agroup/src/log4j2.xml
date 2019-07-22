@@ -28,7 +28,11 @@ monitorInterval="30"表示每30秒配置文件会动态加载一次。
 			这在log4j 1.x原生功能中无法实现，在log4j2中就很简单了。
     	 -->
         <console name="Console" target="SYSTEM_OUT">
+<<<<<<< HEAD
             <PatternLayout charset="GBK" pattern="[%d{yyyy-MM-dd HH:mm:ss:SSS}][%p] -%l -%m%n"/>
+=======
+            <PatternLayout charset="utf-8" pattern="[%d{yyyy-MM-dd HH:mm:ss:SSS}][%p] -%l -%m%n"/>
+>>>>>>> refs/remotes/origin/master
         </console>
  
         <RollingFile name="RollingFileInfo" fileName="${LOG_HOME}/${FILE_NAME}/${FILE_NAME}_info.log"

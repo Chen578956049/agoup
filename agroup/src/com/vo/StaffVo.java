@@ -1,5 +1,6 @@
 package com.vo;
 
+<<<<<<< HEAD
 import java.util.List;
 
 public class StaffVo {
@@ -21,6 +22,21 @@ public class StaffVo {
 	public void setContracts(List<ContractVo> contracts) {
 		this.contracts = contracts;
 	}
+=======
+
+
+public class StaffVo {
+
+	private int SId;
+	private String SName;
+	private int SPid;
+	private int SAid;
+	private String SUsername;
+	private String SPassworld;
+	private int SLid;
+	
+	
+>>>>>>> refs/remotes/origin/master
 	public String getSUsername() {
 		return SUsername;
 	}
