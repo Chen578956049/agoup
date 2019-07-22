@@ -162,7 +162,7 @@ for(i=0;i<cs.length;i++){
 											</div></td>
 										<td height="22" background="<%=basePath%>" bgcolor="#FFFFFF"
 											style="width: 15%"><div align="center">
-												<span class="STYLE1">合同名称</span>
+												<span class="STYLE1">合同内容</span>
 											</div></td>
 										<%-- <td height="22" background="<%=basePath%>resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 15%"><div align="center"><span class="STYLE1">购买产品</span></div></td> --%>
 										<td height="22" background="<%=basePath%>" bgcolor="#FFFFFF"
@@ -248,6 +248,16 @@ for(i=0;i<cs.length;i++){
 
 									</c:if>
 									<c:if test="${queryType==1}">
+										<c:if test="${staff.contracts==null}">
+											<tr>
+												<td height="20" bgcolor="#FFFFFF" colspan="21"
+													align="center">
+													<div align="center">
+														<span class="STYLE1">没有合同相关信息</span>
+													</div>
+												</td>
+											</tr>
+										</c:if>
 										<c:forEach items="${sta}" var="staff">
 											<c:forEach items="${staff.contracts}" var="con">
 												<tr>
@@ -295,44 +305,53 @@ for(i=0;i<cs.length;i++){
 													</td>
 
 												</tr>
-
+												<c:if test="${con==null}">
+													<tr>
+														<td height="20" bgcolor="#FFFFFF" colspan="21"
+															align="center">
+															<div align="center">
+																<span class="STYLE1">没有合同相关信息</span>
+															</div>
+														</td>
+													</tr>
+												</c:if>
 											</c:forEach>
 										</c:forEach>
 
 									</c:if>
 									<c:if test="${queryType==2}">
 										<c:forEach items="${client}" var="client">
-											<c:forEach items="${client.Contracts}" var="con">
+											<c:forEach items="${client.contracts}" var="c">
 												<tr>
 													<td height="20" bgcolor="#FFFFFF" style="width: 3%"><div
 															align="center" class="STYLE1">
-															<div align="center">${con.CONId}</div>
+															<div align="center">${c.CONId}</div>
 														</div></td>
 													<td height="20" bgcolor="#FFFFFF" style="width: 5%"><div
 															align="center">
-															<span class="STYLE1">${con.CONPhotograph}</span>
+															<span class="STYLE1">${c.CONPhotograph}</span>
 														</div></td>
 													<%-- <td height="20" bgcolor="#FFFFFF" style="width: 3%"><div align="center"><span class="STYLE1"><%=user.getUserSex() %> </span></div></td> --%>
 													<td height="20" bgcolor="#FFFFFF" style="width: 3%"><div
 															align="center">
-															<span class="STYLE1">${con.clientVo.CName}</span>
+															<span class="STYLE1">${c.clientVo.CName}</span>
 														</div></td>
 													<td height="20" bgcolor="#FFFFFF" style="width: 3%"><div
 															align="center">
-															<span class="STYLE1">${con.staffVo.SName} </span>
+															<span class="STYLE1">${c.staffVo.SName} </span>
 														</div></td>
 													<td height="20" bgcolor="#FFFFFF" style="width: 5%"><div
 															align="center">
-															<span class="STYLE1">${con.CONConstate}</span>
+															<span class="STYLE1">${c.CONConstate}</span>
 														</div></td>
 													<td height="20" bgcolor="#FFFFFF" style="width: 5%"><div
 															align="center">
-															<span class="STYLE1">${con.CONMoney}</span>
+															<span class="STYLE1">${c.CONMoney}</span>
 														</div></td>
 													<%-- <td height="20" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1"><%=user.getUserDiploma() %> </span></div></td> --%>
 													<td height="20" bgcolor="#FFFFFF" style="width: 5%"><div
 															align="center">
-															<span class="STYLE1">${con.CONTime}</span>
+															<span class="STYLE1">${c.CONTime}</span>
 														</div></td>
 													<%-- <td height="20" bgcolor="#FFFFFF" style="width: 15%"><div align="center"><span class="STYLE1"><%=user.getUserAddress() %></span></div></td> --%>
 
@@ -348,7 +367,16 @@ for(i=0;i<cs.length;i++){
 													</td>
 
 												</tr>
-
+												<c:if test="${c==null}">
+													<tr>
+														<td height="20" bgcolor="#FFFFFF" colspan="21"
+															align="center">
+															<div align="center">
+																<span class="STYLE1">没有合同相关信息</span>
+															</div>
+														</td>
+													</tr>
+												</c:if>
 											</c:forEach>
 										</c:forEach>
 
@@ -357,13 +385,15 @@ for(i=0;i<cs.length;i++){
 
 
 									<%-- <%}}else{ %> --%>
-									<tr>
-										<td height="20" bgcolor="#FFFFFF" colspan="21" align="center">
-											<div align="center">
-												<span class="STYLE1">没有合同相关信息</span>
-											</div>
-										</td>
-									</tr>
+									<%-- <c:if test="${li==null&&con==null&&c==null}">
+										<tr>
+											<td height="20" bgcolor="#FFFFFF" colspan="21" align="center">
+												<div align="center">
+													<span class="STYLE1">没有合同相关信息</span>
+												</div>
+											</td>
+										</tr>
+									</c:if> --%>
 									<%-- <%} %> --%>
 								</table></td>
 							<td width="8"

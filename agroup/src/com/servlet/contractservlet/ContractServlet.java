@@ -35,13 +35,10 @@ public class ContractServlet{
 	public ModelAndView findCustomerByCAId(@ModelAttribute ContractVo con) {
 		int contract=contractService.addcontract(con);
 		if("潜在".equals(clientService.Listselectclient(con.getCONCid()).getCState())&&contract!=0) {
-			System.out.println("------------------"+con.getCONCid()+"-----------第一个---------"+"已成交");
 			clientService.StateClientUpdate(con.getCONCid(), "已成交");
 		}else if("已成交".equals(clientService.Listselectclient(con.getCONCid()).getCState())&&contract!=0) {
-			System.out.println("------------------"+con.getCONCid()+"------------第二个--------"+"已成交");
 			clientService.StateClientUpdate(con.getCONCid(),"老客户");
 		}else if("老客户".equals(clientService.Listselectclient(con.getCONCid()).getCState())&&contract!=0) {
-			System.out.println("------------------"+con.getCONCid()+"----------第三个----------"+"已成交");
 			clientService.StateClientUpdate(con.getCONCid(),"老客户");
 		}
 		return null;
@@ -85,6 +82,7 @@ public class ContractServlet{
 	
 	
 	
+	//根据名字查找
 	@RequestMapping("/StaffNameSelectContractVo")
 	public ModelAndView StaffNameSelectContractVo(@SessionAttribute("list") StaffVo staff,String userName,String queryType){
 		ModelAndView modelAndView =new ModelAndView();
@@ -94,7 +92,7 @@ public class ContractServlet{
 			modelAndView.addObject("queryType",queryType);
 			modelAndView.setViewName("/view/contractView/contract_list.jsp");
 			return modelAndView;
-		}else if("2".equals("queryType")&&staff.getSPid()==2) {
+		}else if("2".equals(queryType)&&staff.getSPid()==2||"2".equals(queryType)&&staff.getSPid()==1) {
 			List<ClientVo> client=clientService.ClientNameSelect(userName);
 			modelAndView.addObject("client",client);
 			modelAndView.addObject("queryType",queryType);
