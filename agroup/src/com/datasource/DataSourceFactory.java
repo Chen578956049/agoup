@@ -1,6 +1,5 @@
 package com.datasource;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.logging.log4j2.Log4j2Impl;
@@ -8,27 +7,29 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /*
- * ´´½¨Êı¾İÔ´¹¤³§Àà
+ * åˆ›å»ºæ•°æ®æºå·¥å‚ç±»
  */
 @Component
-@PropertySource("dbdatasource.properties")
-@ComponentScan("com.datasource")
+@PropertySource("classpath:dbdatasource.properties")
+//@ComponentScan("com.datasource")
+@EnableTransactionManagement(proxyTargetClass = true)
+@MapperScan("com.mapper")
 public class DataSourceFactory {
 	
-	//Êı¾İ¿âÁ¬½ÓÅäÖÃÎÄ¼şµÄÊôĞÔ×¢Èë
+	//æ•°æ®åº“è¿æ¥é…ç½®æ–‡ä»¶çš„å±æ€§æ³¨å…¥
 	@Value("${driverClass}")
 	private String driver;
 	
@@ -42,13 +43,13 @@ public class DataSourceFactory {
 	private String psw;
 	
 	@Bean
-	//´´½¨c3p0Êı¾İÔ´¹¤³§
+	//åˆ›å»ºc3p0æ•°æ®æºå·¥å‚
 	public ComboPooledDataSource comboPooledDataSource() {
 		return new ComboPooledDataSource();
 	}
 	
 	@Bean
-	//´´½¨spring jdbcÊı¾İÔ´¹¤³§
+	//åˆ›å»ºspring jdbcæ•°æ®æºå·¥å‚
 	public DriverManagerDataSource driverManagerDataSource() {
 		DriverManagerDataSource datasource
 		=new DriverManagerDataSource();
@@ -61,12 +62,12 @@ public class DataSourceFactory {
 	}
 	
 	/*
-	 * ´´½¨SqlSessionFactoryBean
-	 * Í¨¹ıConfigurationÀà Íê³Émybatis-config.xmlÅäÖÃÎÄ¼şµÄÏà¹ØĞÅÏ¢¼ÓÔØ
+	 * åˆ›å»ºSqlSessionFactoryBean
+	 * é€šè¿‡Configurationç±» å®Œæˆmybatis-config.xmlé…ç½®æ–‡ä»¶çš„ç›¸å…³ä¿¡æ¯åŠ è½½
 	 */
 	@Bean
 	@Autowired
-	//@Qualifier("c3p0DataSource") //×¢ÈëµÄÊÇÄÄ¸öÊı¾İÔ´
+	//@Qualifier("c3p0DataSource") //æ³¨å…¥çš„æ˜¯å“ªä¸ªæ•°æ®æº
 	public SqlSessionFactory sqlSessionFactory(DataSource driverManagerDataSource) {
 		SqlSessionFactoryBean factory=new SqlSessionFactoryBean();
 		
@@ -78,10 +79,10 @@ public class DataSourceFactory {
 		configuration.setLogImpl(Log4j2Impl.class);
 		configuration.setMapUnderscoreToCamelCase(true);
 		
-		//Êı¾İÔ´×¢Èë
+		//æ•°æ®æºæ³¨å…¥
 		factory.setDataSource(driverManagerDataSource);
 		
-		//×¢ÈëMyBatisºËĞÄÅäÖÃĞÅÏ¢
+		//æ³¨å…¥MyBatisæ ¸å¿ƒé…ç½®ä¿¡æ¯
 		factory.setConfiguration(configuration);
 		
 			SqlSessionFactory sqlSessionFactory = null;
@@ -100,6 +101,15 @@ public class DataSourceFactory {
 	//@Qualifier("factoryBean")
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
 		return new SqlSessionTemplate(sqlSessionFactory);
+	}
+	
+	
+	//
+	@Bean
+	public DataSourceTransactionManager transactionManager(DataSource driverManagerDataSource) {
+		DataSourceTransactionManager transactionManager
+		=new DataSourceTransactionManager(driverManagerDataSource);
+		return transactionManager;
 	}
 	
 	

@@ -1,6 +1,9 @@
 package com.junit;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.sql.DataSource;
 
@@ -12,9 +15,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.datasource.DataSourceFactory;
+import com.mapper.ContractMapper;
+import com.service.clientservice.impl.ClientServiceImpl;
+import com.vo.ContractVo;
 
 public class TestDataSource {
 	
@@ -23,6 +29,7 @@ public class TestDataSource {
 	private SqlSessionTemplate SqlSessionTemplate;
 	
 	private static Logger log = LogManager.getLogger();
+	private static ContractMapper contractMapper;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -36,17 +43,13 @@ public class TestDataSource {
 	
 	@Before
 	public void setUp() {
-		dataSource = context.getBean("comboPooledDataSource", DataSource.class);
-		SqlSessionTemplate = context.getBean("sqlSessionTemplate", SqlSessionTemplate.class);
+		contractMapper =context.getBean("contractMapper",ContractMapper.class);
 	}
 
 	@Test
 	public void test() {
-		assertNotNull(dataSource);
-		assertNotNull(SqlSessionTemplate);
-		log.debug("---------------------------------------->"+dataSource);
-		log.debug("--------------------------------->"+SqlSessionTemplate);
-		
+		ClientServiceImpl c=new ClientServiceImpl();
+		c.StateClientUpdate(1, "WE");
 	}
 
 }
