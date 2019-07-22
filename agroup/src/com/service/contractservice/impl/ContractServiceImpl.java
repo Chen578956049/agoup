@@ -18,15 +18,9 @@ public class ContractServiceImpl implements ContractService{
 	private ContractMapper contractMapper;
 	
 	@Override
-<<<<<<< HEAD
 	public int addcontract(ContractVo con) {
 		
 		return contractMapper.addcontract(con);
-=======
-	public void addcontract(ContractVo con) {
-		contractMapper.addcontract(con);
-		
->>>>>>> refs/remotes/origin/master
 		}
 
 	

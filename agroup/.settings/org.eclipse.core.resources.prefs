@@ -1,11 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/c3p0.properties=UTF-8
-<<<<<<< HEAD
 encoding//src/com/mapper/StaffMapper.java=UTF-8
 encoding//src/com/servlet/staffservlet/StaffServlet.java=UTF-8
 encoding//src/dbdatasource.properties=UTF-8
 encoding/<project>=UTF-8
-=======
-encoding//src/com/servlet/staffservlet/StaffServlet.java=UTF-8
-encoding//src/dbdatasource.properties=UTF-8
->>>>>>> refs/remotes/origin/master

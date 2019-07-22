@@ -1,6 +1,5 @@
 package com.vo;
 
-<<<<<<< HEAD
 import java.util.List;
 
 public class ClientVo {
@@ -39,35 +38,6 @@ public class ClientVo {
 	public void setContracts(List<ContractVo> contracts) {
 		this.contracts = contracts;
 	}
-=======
-public class ClientVo {
-
-	private int CId;
-	private String CName;
-	private String IPhone;
-	private String CQq;
-	private String CMailbox;
-	private String CSite;
-	private String CState;
-	private int CAid;
-	private int CSid;
-	
-	
-	public ClientVo(int cId, String cName, String iPhone, String cQq, String cMailbox, String cSite, String cState,
-			int cAid, int cSid) {
-		this.CId = cId;
-		this.CName = cName;
-		this.IPhone = iPhone;
-		this.CQq = cQq;
-		this.CMailbox = cMailbox;
-		this.CSite = cSite;
-		this.CState = cState;
-		this.CAid = cAid;
-		this.CSid = cSid;
-		
-	}
-
->>>>>>> refs/remotes/origin/master
 
 	public ClientVo() {
 	}

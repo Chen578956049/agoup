@@ -27,7 +27,6 @@ public class ContractDaoImpl extends SqlSessionDaoSupport implements ContractMap
 	}
 	
 	@Override
-<<<<<<< HEAD
 	public int addcontract(ContractVo con) {
 		return this.getSqlSessionTemplate().insert(ChangeToNameSpace("addcontract"),con);
 	}
@@ -36,22 +35,6 @@ public class ContractDaoImpl extends SqlSessionDaoSupport implements ContractMap
 	public List<ContractVo> StaffIdSelectContract(StaffVo staff) {
 		List<ContractVo> list=this.getSqlSessionTemplate().selectList(ChangeToNameSpace("StaffIdSelectContract"),staff);
 		return list;
-=======
-	public void addcontract(ContractVo con) {
-
-	}
-
-	@Override
-	public List<ContractVo> StaffIdSelectContract(StaffVo staff) {
-		List<ContractVo> list=this.getSqlSessionTemplate().selectList(ChangeToNameSpace("StaffIdSelectContract"),staff);
-		return list;
-	}
-
-	@Override
-	public void updateClient() {
-		// TODO Auto-generated method stub
-		
->>>>>>> refs/remotes/origin/master
 	}
 
 	@Override
